@@ -10,14 +10,14 @@ type = "post"
 
 The basic syntax of frust follows a SQL-like query syntax
 ```
-furst "[attributes] from [directories] where [filter expression] exec [command];"
+frust "[attributes] from [directories] where [filter expression] exec [command];"
 ```
 The semicolon at the end of the query is optional and, if not present, gets appended automatically.
 All parts of the query are optional too, e.g. the following queries are also possible
 ```
-furst "where [filter expression];"
-furst "[attributes] where [filter expression] exec [command];"
-furst "exec [command];"
+frust "where [filter expression];"
+frust "[attributes] where [filter expression] exec [command];"
+frust "exec [command];"
 ```
 The missing parts are filled with defaults which resemble the behaviour of the original find command.
 
