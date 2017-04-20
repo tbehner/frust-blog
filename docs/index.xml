@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>frust</title>
-    <link>http://tbehner.github.io/</link>
+    <link>http://tbehner.github.io/frust-blog/</link>
     <description>Recent content on frust</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 19 Apr 2017 14:34:33 +0200</lastBuildDate>
     
-	<atom:link href="http://tbehner.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://tbehner.github.io/frust-blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Introduction to frust</title>
-      <link>http://tbehner.github.io/frust/</link>
+      <link>http://tbehner.github.io/frust-blog/frust/</link>
       <pubDate>Wed, 19 Apr 2017 14:34:33 +0200</pubDate>
       
-      <guid>http://tbehner.github.io/frust/</guid>
+      <guid>http://tbehner.github.io/frust-blog/frust/</guid>
       <description>Introduction to frust The basic syntax of frust follows a SQL-like query syntax
 furst &amp;quot;[attributes] from [directories] where [filter expression] exec [command];&amp;quot;  The semicolon at the end of the query is optional and, if not present, gets appended automatically. All parts of the query are optional too, e.g. the following queries are also possible
 furst &amp;quot;where [filter expression];&amp;quot; furst &amp;quot;[attributes] where [filter expression] exec [command];&amp;quot; furst &amp;quot;exec [command];&amp;quot;  The missing parts are filled with defaults which resemble the behaviour of the original find command.</description>

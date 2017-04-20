@@ -2,22 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://tbehner.github.io/frust/</loc>
+    <loc>http://tbehner.github.io/frust-blog/frust/</loc>
     <lastmod>2017-04-19T14:34:33+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tbehner.github.io/</loc>
+    <loc>http://tbehner.github.io/frust-blog/</loc>
     <lastmod>2017-04-19T14:34:33+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://tbehner.github.io/categories/</loc>
+    <loc>http://tbehner.github.io/frust-blog/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://tbehner.github.io/tags/</loc>
+    <loc>http://tbehner.github.io/frust-blog/tags/</loc>
     <priority>0</priority>
   </url>
   
