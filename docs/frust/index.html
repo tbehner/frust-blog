@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Introduction to frust</title>
+  <meta property="og:title" content="Introduction to frust" />
+  <meta name="twitter:title" content="Introduction to frust" />
+  <meta name="description" content="Installation and first steps with frust">
+  <meta property="og:description" content="Installation and first steps with frust">
+  <meta name="twitter:description" content="Installation and first steps with frust">
+  <meta name="author" content=""/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="http://tbehner.github.io/frust/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="frust" />
+
+  <meta name="generator" content="Hugo 0.20.2" />
+  <link rel="canonical" href="http://tbehner.github.io/frust/" />
+  <link rel="alternate" href="http://tbehner.github.io/index.xml" type="application/rss+xml" title="frust">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://tbehner.github.io//css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://tbehner.github.io//css/pygment_highlights.css" />
+  <link rel="stylesheet" href="http://tbehner.github.io//css/highlight.min.css" />
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://tbehner.github.io/">frust</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Introduction to frust</h1>
+                
+                
+                  <span class="post-meta">
+  Posted on April 19, 2017
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h1 id="introduction-to-frust">Introduction to frust</h1>
+
+<p>The basic syntax of frust follows a SQL-like query syntax</p>
+
+<pre><code>furst &quot;[attributes] from [directories] where [filter expression] exec [command];&quot;
+</code></pre>
+
+<p>The semicolon at the end of the query is optional and, if not present, gets appended automatically.
+All parts of the query are optional too, e.g. the following queries are also possible</p>
+
+<pre><code>furst &quot;where [filter expression];&quot;
+furst &quot;[attributes] where [filter expression] exec [command];&quot;
+furst &quot;exec [command];&quot;
+</code></pre>
+
+<p>The missing parts are filled with defaults which resemble the behaviour of the original find command.</p>
+
+<p>The attributes are a comma seperated list of the following currently supported attributes:
+  * name (full path of a file)
+  * basename (only the name of the file, without the path)
+  * size (size of the file)
+  * mtime (last modification time)
+  * atime (last access time)
+  * ctime (creation time)
+  * inode
+  * filetype (either file, directory or link)
+  * mimetype</p>
+
+<p>These are also the attributes which are supported for use in the filter expression.
+The currently supported operators are: &lt;, &lt;=, ==, &gt;=, &gt; and ~.
+How these operators work depends on the attribute they are used with.</p>
+
+<p>The name attribute implements for the ~ operator a comparison with a regular expression.
+For example</p>
+
+<pre><code>frust &quot;name where name ~ '^\.git'&quot;
+</code></pre>
+
+<p>returns all files, where the path starts with a &lsquo;.git&rsquo; such as &lsquo;.git/&rsquo; or &lsquo;.gitignore&rsquo;.
+Take a look at the <a href="https://doc.rust-lang.org/regex/regex/index.html">documentation</a> of the regex crate to see which regular expressions are supported.</p>
+
+<p>The size attribute can be compared with filesizes written as [number][unit], with units b, k, M, G, T (bytes, kilo bytes, mega bytes, giga bytes and terra bytes respectively) supported currently.
+Some examples:</p>
+
+<pre><code>frust &quot;name where size &lt; 600M&quot;
+</code></pre>
+
+<p>prints all files which are smaller than 600MByte and</p>
+
+<pre><code>frust &quot;name where size &gt;= 1G&quot;
+</code></pre>
+
+<p>prints all files which are larger or equal 1Gbyte.</p>
+
+<p>The time attributes support absolute time, e.g. 2017-04-01 12:18, and relative time, e.g. 1h.
+The time units for relative times are m, h, D, M, Y.
+For example</p>
+
+<pre><code>frust &quot;name where mtime &lt; -1m&quot;
+</code></pre>
+
+<p>prints all files which where modified less then a minute ago,</p>
+
+<pre><code>frust &quot;name where mtime &gt; 2017-01-01&quot;
+</code></pre>
+
+<p>prints all files which where modified after the 1st of January 2017,</p>
+
+<pre><code>frust &quot;name where mtime &gt; 17:00&quot;
+</code></pre>
+
+<p>prints all files which where modified after 17:00 (or 5pm) and</p>
+
+<pre><code>frust &quot;name where mtime &gt; 2017-01-01 17:00&quot;
+</code></pre>
+
+<p>prints all files which where modified after 1st of January 2017 at 17:00 (or 5pm).</p>
+
+<p>The command in the exec part is executed for each file, which passes the filter expression.
+For using the attributes of the found file, frust uses the <a href="https://shopify.github.io/liquid/">liquid template engine</a>.
+Some examples:</p>
+
+<pre><code>frust &quot;where name '\.rar$' and mtime &lt; -1D exec rm {{name}}&quot;
+</code></pre>
+
+<p>deletes all rar-archives which are older than a day or</p>
+
+<pre><code>frust &quot;where name '\.jpg$' exec cp {{name}} {{name | remove_first: &quot;.&quot; | prepend: /media/backup | append: &quot;.backup&quot;}}&quot; 
+</code></pre>
+
+<p>moves all jpg to <code>/media/backup</code> and appends the file extension <code>backup</code>.</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+        
+      </ul>
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://tbehner.github.io/">frust</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.20.2</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://tbehner.github.io//js/main.js"></script>
+<script src="http://tbehner.github.io//js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+
+
+  </body>
+</html>
+

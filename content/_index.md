@@ -1,0 +1,31 @@
++++
+date = "2017-04-19T14:34:33+02:00"
+description = "a find replacement with SQL-like syntax"
+title = "frust"
+
++++
+
+frust is a find replacement with SQL-like syntax.
+
+*Note:* frust has a *pre-alpha* status and has a lot of bugs, issues and missing features.
+We are grateful for every opened issue, pull request or idea.
+Additionally this project was written while learning a good part of the [Rust programming language](https://www.rust-lang.org/en-US/).
+Hence the quality of code will hopefully improve while learning more about Rust.
+
+## Installation
+### Install from source
+Clone the repository to a desired location and then compile the binary with
+```
+cargo build --release
+```
+and move the executable somewhere on $PATH, for example
+```
+cp ./target/release/frust $HOME/bin
+```
+
+### Download binary
+
+* [linux-amd64](/binaries/frust-v0.0.1) (Commit [d5147f1](https://github.com/tbehner/frust/commit/d5147f166e151bf98f98ae185dd4c393bd65f13a)) (sha265 7016c66ff3214ef90e02346513dfa2657e7fbc48bfadf7db63a4f4349f579655)
+
+Alternatively check the releases on the github project for binaries of newer or older releases.
+ 

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>frust</title>
+  <meta property="og:title" content="frust" />
+  <meta name="twitter:title" content="frust" />
+  <meta name="description" content="a find replacement with SQL-like syntax">
+  <meta property="og:description" content="a find replacement with SQL-like syntax">
+  <meta name="twitter:description" content="a find replacement with SQL-like syntax">
+  <meta name="author" content=""/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="http://tbehner.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="frust" />
+
+  <meta name="generator" content="Hugo 0.20.2" />
+  <link rel="canonical" href="http://tbehner.github.io/" />
+  <link rel="alternate" href="http://tbehner.github.io/index.xml" type="application/rss+xml" title="frust">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://tbehner.github.io//css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://tbehner.github.io//css/pygment_highlights.css" />
+  <link rel="stylesheet" href="http://tbehner.github.io//css/highlight.min.css" />
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://tbehner.github.io/">frust</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>frust</h1>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div role="main" class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+          <div class="well">
+            
+
+<p>frust is a find replacement with SQL-like syntax.</p>
+
+<p><em>Note:</em> frust has a <em>pre-alpha</em> status and has a lot of bugs, issues and missing features.
+We are grateful for every opened issue, pull request or idea.
+Additionally this project was written while learning a good part of the <a href="https://www.rust-lang.org/en-US/">Rust programming language</a>.
+Hence the quality of code will hopefully improve while learning more about Rust.</p>
+
+<h2 id="installation">Installation</h2>
+
+<h3 id="install-from-source">Install from source</h3>
+
+<p>Clone the repository to a desired location and then compile the binary with</p>
+
+<pre><code>cargo build --release
+</code></pre>
+
+<p>and move the executable somewhere on $PATH, for example</p>
+
+<pre><code>cp ./target/release/frust $HOME/bin
+</code></pre>
+
+<h3 id="download-binary">Download binary</h3>
+
+<ul>
+<li><a href="/binaries/frust-v0.0.1">linux-amd64</a> (Commit <a href="https://github.com/tbehner/frust/commit/d5147f166e151bf98f98ae185dd4c393bd65f13a">d5147f1</a>) (sha265 7016c66ff3214ef90e02346513dfa2657e7fbc48bfadf7db63a4f4349f579655)</li>
+</ul>
+
+<p>Alternatively check the releases on the github project for binaries of newer or older releases.</p>
+
+          </div>
+        
+
+        <div class="posts-list">
+          
+          
+            <article class="post-preview">
+              <a href="http://tbehner.github.io/frust/">
+                <h2 class="post-title">Introduction to frust</h2>
+                
+              </a>
+
+              <span class="post-meta">
+  Posted on April 19, 2017
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Introduction to frust The basic syntax of frust follows a SQL-like query syntax
+furst &quot;[attributes] from [directories] where [filter expression] exec [command];&quot;  The semicolon at the end of the query is optional and, if not present, gets appended automatically. All parts of the query are optional too, e.g. the following queries are also possible
+furst &quot;where [filter expression];&quot; furst &quot;[attributes] where [filter expression] exec [command];&quot; furst &quot;exec [command];&quot;  The missing parts are filled with defaults which resemble the behaviour of the original find command.
+                  <a href="http://tbehner.github.io/frust/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+        </div>
+
+        
+      </div>
+    </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://tbehner.github.io/">frust</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.20.2</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://tbehner.github.io//js/main.js"></script>
+<script src="http://tbehner.github.io//js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+
+
+  </body>
+</html>
+

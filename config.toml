@@ -1,0 +1,5 @@
+baseURL = "http://tbehner.github.io/"
+languageCode = "en-us"
+title = "frust"
+theme = "beautifulhugo"
+publishDir = "docs"
