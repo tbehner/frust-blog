@@ -1,4 +1,4 @@
-baseURL = "http://tbehner.github.io/frust-blog/"
+baseURL = "https://tbehner.github.io/frust-blog/"
 languageCode = "en-us"
 title = "frust"
 theme = "beautifulhugo"
