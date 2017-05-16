@@ -25,7 +25,7 @@ cp ./target/release/frust $HOME/bin
 
 ### Download binary
 
-* [linux-amd64](/frust-blog/binaries/frust-v0.0.1) (Commit [d5147f1](https://github.com/tbehner/frust/commit/d5147f166e151bf98f98ae185dd4c393bd65f13a)) (sha265 747141c81304c4b8e8f5137166799653806372c6e9e0fe54faecec9f51f09aa5)
+* [linux-amd64](/frust-blog/binaries/frust-v0.0.1) (Commit [d5147f1](https://github.com/tbehner/frust/commit/d5147f166e151bf98f98ae185dd4c393bd65f13a)) (sha265 dfe4c6e2ef03d9c0823ed18a5d7433cdcd07b9563a6f3f5beda3bb7e6ff83b20)
 * [linux-armv7](/frust-blog/binaries/frust-armv7-v.0.0.1) (Commit [d5147f1](https://github.com/tbehner/frust/commit/d5147f166e151bf98f98ae185dd4c393bd65f13a)) (sha265 747141c81304c4b8e8f5137166799653806372c6e9e0fe54faecec9f51f09aa5)
 
 Alternatively check the releases on the github project for binaries of newer or older releases.
