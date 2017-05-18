@@ -25,8 +25,17 @@ cp ./target/release/frust $HOME/bin
 
 ### Download binary
 
-* [linux-amd64](/frust-blog/binaries/frust-v0.0.1) (Commit [d5147f1](https://github.com/tbehner/frust/commit/d5147f166e151bf98f98ae185dd4c393bd65f13a)) (sha265 dfe4c6e2ef03d9c0823ed18a5d7433cdcd07b9563a6f3f5beda3bb7e6ff83b20)
+* [linux-amd64](/frust-blog/binaries/frust-v0.0.1) (Commit [702e58](https://github.com/tbehner/frust/commit/702e58b9c504b53a33463cca12fed5108c930acb)) ([signature](/frust-blog/signatures/frust-v0.0.1.sign))
 * [linux-armv7](/frust-blog/binaries/frust-armv7-v.0.0.1) (Commit [d5147f1](https://github.com/tbehner/frust/commit/d5147f166e151bf98f98ae185dd4c393bd65f13a)) (sha265 747141c81304c4b8e8f5137166799653806372c6e9e0fe54faecec9f51f09aa5)
 
 Alternatively check the releases on the github project for binaries of newer or older releases.
- 
+
+To check that the signature is correct and the binary was not altered in any way, import my public key
+```
+gpg --keyserver pgp.mit.edu --recv 35233ACB
+```
+and execute
+```
+gpg --verify frust-v0.0.1.sign frust-v0.0.1
+```
+to verify the signature of the binary.

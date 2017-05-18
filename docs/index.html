@@ -126,10 +126,23 @@ Hence the quality of code will hopefully improve while learning more about Rust.
 <h3 id="download-binary">Download binary</h3>
 
 <ul>
-<li><a href="/frust-blog/binaries/frust-v0.0.1">linux-amd64</a> (Commit <a href="https://github.com/tbehner/frust/commit/d5147f166e151bf98f98ae185dd4c393bd65f13a">d5147f1</a>) (sha265 7016c66ff3214ef90e02346513dfa2657e7fbc48bfadf7db63a4f4349f579655)</li>
+<li><a href="/frust-blog/binaries/frust-v0.0.1">linux-amd64</a> (Commit <a href="https://github.com/tbehner/frust/commit/702e58b9c504b53a33463cca12fed5108c930acb">702e58</a>) (<a href="/frust-blog/signatures/frust-v0.0.1.sign">signature</a>)</li>
+<li><a href="/frust-blog/binaries/frust-armv7-v.0.0.1">linux-armv7</a> (Commit <a href="https://github.com/tbehner/frust/commit/d5147f166e151bf98f98ae185dd4c393bd65f13a">d5147f1</a>) (sha265 747141c81304c4b8e8f5137166799653806372c6e9e0fe54faecec9f51f09aa5)</li>
 </ul>
 
 <p>Alternatively check the releases on the github project for binaries of newer or older releases.</p>
+
+<p>To check that the signature is correct and the binary was not altered in any way, import my public key</p>
+
+<pre><code>gpg --keyserver pgp.mit.edu --recv 35233ACB
+</code></pre>
+
+<p>and execute</p>
+
+<pre><code>gpg --verify frust-v0.0.1.sign frust-v0.0.1
+</code></pre>
+
+<p>to verify the signature of the binary.</p>
 
           </div>
         
