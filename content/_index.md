@@ -39,3 +39,8 @@ and execute
 gpg --verify frust-v0.0.1.sign frust-v0.0.1
 ```
 to verify the signature of the binary.
+
+### Pre-build packages
+Currently we only build packages for Fedora
+
+  * [frust](/frust-blog/packages/frust-0.0.2-1.fc25.x86_64.rpm)
